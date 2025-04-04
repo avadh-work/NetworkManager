@@ -18,7 +18,7 @@ public protocol NetworkServiceProtocol {
 public class NetworkManager: NetworkServiceProtocol {
 
     /// Singleton instance of NetworkManager.
-    @MainActor public static let shared = NetworkManager()
+    nonisolated(unsafe) public static let shared = NetworkManager()
 
     /// Private initializer to prevent external instantiation.
     private init() {}
